@@ -1,25 +1,20 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{D5B3F742-06AC-49BD-BC85-5D418DDC6DA5}|Default">
   <MonoDevelop.Ide.ItemProperties.PlantFinderFinalProject PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="PlantFinderFinalProject/appsettings.json">
     <Files>
-      <File FileName="PlantFinderFinalProject/.gitignore" Line="234" Column="17" />
+      <File FileName="PlantFinderFinalProject/.gitignore" Line="235" Column="29" />
       <File FileName="PlantFinderFinalProject/PlantFinderFinalProject.csproj" Line="1" Column="1" />
+      <File FileName="PlantFinderFinalProject/appsettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PlantFinderFinalProject" expanded="True">
-            <Node name="PlantFinderFinalProject" expanded="True">
+            <Node name="PlantFinderFinalProject" expanded="True" selected="True">
               <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True">
-                  <Node name="Microsoft.AspNetCore.SpaServices.Extensions" expanded="True" />
-                </Node>
+                <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="app" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>

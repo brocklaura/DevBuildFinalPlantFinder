@@ -13,6 +13,10 @@ import { MyPlantsComponent } from './my-plants/my-plants.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { AddPlantComponent } from './add-plant/add-plant.component';
 import { SuggestionPageComponent } from './suggestion-page/suggestion-page.component';
+import { PlantService } from './plant.service';
+import { MyplaService } from './mypla.service';
+import { WishlistService } from './wishlist.service';
+import { TrefleService } from './trefle.service';
 
 
 @NgModule({
@@ -44,7 +48,8 @@ import { SuggestionPageComponent } from './suggestion-page/suggestion-page.compo
     
     ])
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PlantService, TrefleService, WishlistService, MyplaService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

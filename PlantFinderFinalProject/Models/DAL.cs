@@ -64,8 +64,8 @@ namespace PlantFinderFinalProject.Models
         //Add to favorites
         public int AddToWishlist(Wishlist wishlist)
         {
-            string command = "INSERT INTO Wish_List (ID, UserID) ";
-            command += "VALUES (@ID, @userID)";
+            string command = "INSERT INTO Wish_List (ID, UserID, PlantID) ";
+            command += "VALUES (@ID, @userID, @PlantID)";
 
             int result = conn.Execute(command, new
             {

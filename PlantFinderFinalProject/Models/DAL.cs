@@ -11,6 +11,7 @@ namespace PlantFinderFinalProject.Models
     public class DAL
     {
         //this is a comment to test github
+        //this is a comment to test my sanity - mike
         private SqlConnection conn;
         public DAL(string connectionString)
         {

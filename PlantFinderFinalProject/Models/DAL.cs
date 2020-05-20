@@ -32,7 +32,7 @@ namespace PlantFinderFinalProject.Models
             return singlePlant;
         }
 
-        //Add an Event
+        //Add a Plant
         public int AddPlant(Plant singlePlant)
         {
             string addString = "INSERT INTO Plants (ID, Title, Image, Description) ";
@@ -40,7 +40,7 @@ namespace PlantFinderFinalProject.Models
             return conn.Execute(addString, singlePlant);
         }
 
-        //Delete an Event
+        //Delete a Plant
         public int DeletePlantByID(int id)
         {
             string deleteString = "DELETE FROM Plants WHERE ID = @id";
@@ -49,8 +49,7 @@ namespace PlantFinderFinalProject.Models
 
         public IEnumerable<JoinedPlant> GetJoined(int id)
         {
-            string command = "SELECT * ";
-            command += "FROM Plants e JOIN My_Plants f ON e.ID = f.ID WHERE f.UserID=@id";
+            string command = "SELECT * FROM Plants e JOIN My_Plants f ON e.ID = f.ID WHERE f.ID=1";
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
         }

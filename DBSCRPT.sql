@@ -1,9 +1,11 @@
-USE master
+﻿USE master
 IF EXISTS(select * from sys.databases where name='PlantFinderDB')
 DROP DATABASE PlantFinderDB
 GO
 CREATE DATABASE PlantFinderDB
 GO
+
+USE PlantFinderDB
 
 DROP TABLE IF EXISTS Users;
 

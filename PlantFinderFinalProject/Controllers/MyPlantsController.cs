@@ -9,7 +9,7 @@ using PlantFinderFinalProject.Models;
 
 namespace PlantFinderFinalProject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/myplants")]
     [ApiController]
     public class MyPlantsController : ControllerBase
     {

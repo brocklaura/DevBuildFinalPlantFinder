@@ -236,3 +236,6 @@ appsettings.Development.json
 
 #csproj
 PlantFinderFinalProject.csproj
+
+#.DS_Store
+.DS_Store

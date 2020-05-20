@@ -18,7 +18,7 @@ export class PlantsComponent {
 
   }
 
-  plant: Plant[];
+  plantz: Plant[];
 
   ngOnInit() {
     this.get();
@@ -27,7 +27,7 @@ export class PlantsComponent {
   get() {
     this.plantData.getPlants().subscribe(
       (data: Plant[]) => {
-        this.plant = data;
+        this.plantz = data;
       },
       error => console.error(error)
     );

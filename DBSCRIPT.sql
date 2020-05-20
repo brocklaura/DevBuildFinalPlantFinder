@@ -2,7 +2,7 @@ USE master
 IF EXISTS(select * from sys.databases where name='PlantFinderDB')
 ALTER DATABASE PlantFinderDB  SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 
-DROP DATABASE PlantFinderDB
+DROP DATABASE IF EXISTS PlantFinderDB
 GO
 CREATE DATABASE PlantFinderDB
 GO
@@ -66,7 +66,8 @@ VALUES
 ('Madagascar Limelight Dragon','https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1579714624-limelight-1579714606.jpg?crop=0.811xw:1.00xh;0.107xw,0&resize=768:*','Longevity with this plant is practically a given. It''s one of the easiest indoor plants around. It does well in low-light interiors and fluorescent lighting, but will make do in any environment. Warning: Its leaves will appear lighter if you keep it in bright light, but, don''t worry, that''s expected.'),
 ('Prickly Pear Cactus','https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1585598228-bloomscape_peopleplants_prickly-pear-cactus.jpg?crop=1.00xw:0.827xh;0.00160xw,0.0212xh&resize=768:*','Bright green paddle-like pads grow on top of each other, making for a unique plant structure. This guy will make any room look elevated with little to no effort. The Prickly Pear is perfect for those who want more green in their environment, but have limited time to care for plants.'),
 ('Jade Plant','https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1585594514-jyrjpcjs_carousel-1.jpg?crop=0.714xw:1xh;center,top&resize=768:*','These shiny, lime green, oval-shaped leaves on the jade plant will brighten up any room. Plus, jade often blooms small pink or white flowers, adding another pop of color to your space.'),
-('Ponytail Palm','https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1585595429-ponytail-palm-1585595416.jpg?crop=1.00xw:0.827xh;0,0.111xh&resize=768:*','Although the ponytail palm looks like your typical palm tree, it''s actually a succulent which means you can grow this fun-shaped plant right in your own home. Bonus: It''s pet friendly!')GO
+('Ponytail Palm','https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1585595429-ponytail-palm-1585595416.jpg?crop=1.00xw:0.827xh;0,0.111xh&resize=768:*','Although the ponytail palm looks like your typical palm tree, it''s actually a succulent which means you can grow this fun-shaped plant right in your own home. Bonus: It''s pet friendly!')
+GO
 DROP TABLE IF EXISTS My_Plants;
 
 

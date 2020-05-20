@@ -13,11 +13,11 @@ export interface MyPlants {
 
 export interface JoinedPlant {
   id: number;
+  userID: number,
+  waterCompleted: boolean;
   title: string;
   image: string;
   description: string;
-  waterComplete: boolean;
-
 }
 
 export interface Wishlist {

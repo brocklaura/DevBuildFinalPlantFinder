@@ -12,7 +12,7 @@ export class WishlistService {
   }
 
   getWishlist() {
-    return this.http.get<JoinedPlant>('/api/wishlist/' + this.userID);
+    return this.http.get<JoinedPlant[]>('/api/wishlist/' + this.userID);
   }
 
   deleteWishlist(wishID: number) {

@@ -19,7 +19,7 @@ export class TrefleService {
   }
 
   getPlants() {
-    return this.http.get<Plant>(`${this.apiUrl}/plants` + this.token)
+    return this.http.get<Plant>(`${this.apiUrl}/plant` + this.token)
   }
 
   getMyPlants(url: string) {

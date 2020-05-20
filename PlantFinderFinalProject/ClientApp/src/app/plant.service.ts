@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Plant } from './interfaces/plant'
-import { HttpClient } from '@angular/common/http'
+import { Plant } from './interfaces/plant';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+
 
 @Injectable()
 export class PlantService {
@@ -8,8 +10,8 @@ export class PlantService {
 
   }
 
-  getPlants() {
-    return this.http.get<Plant>('/api/plant')
+  getPlants(): Observable<Plant[]> {
+    return this.http.get<Plant[]>('/api/plant');
   }
 
   getPlant(id: number) {

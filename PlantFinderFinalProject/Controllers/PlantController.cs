@@ -24,7 +24,6 @@ namespace PlantFinderFinalProject.Controllers
         public IEnumerable<Plant> GetPlants()
         {
             IEnumerable<Plant> result = dal.GetAllPlants();
-
             return result;
 
         }

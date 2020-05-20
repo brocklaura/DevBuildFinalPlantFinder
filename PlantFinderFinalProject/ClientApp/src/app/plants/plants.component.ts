@@ -1,14 +1,32 @@
-﻿import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Plant } from '../interfaces/plant';
+import { PlantService } from '../plant.service';
 
 @Component({
-    selector: 'app-plants',
-    templateUrl: './plants.component.html',
-    styleUrls: ['./plants.component.scss']
+  selector: 'app-plants',
+  templateUrl: './plants.component.html',
+  styleUrls: ['./plants.component.scss']
 })
 /** plants component*/
 export class PlantsComponent {
-    /** plants ctor */
-    constructor() {
+  /** plants ctor */
+  constructor(private plantData: PlantService) {
 
-    }
-}
+  }
+
+  plant: Plant[];
+
+  ngOnInit() {
+    this.get();
+  }
+
+  get() {
+    this.plantData.getPlants().subscribe(
+      (data: Plant[]) => {
+        this.plant = data;
+      },
+      error => console.error(error)
+    );
+  }
+ }
+

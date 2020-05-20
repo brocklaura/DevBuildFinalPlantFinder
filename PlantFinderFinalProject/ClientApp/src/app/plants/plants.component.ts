@@ -19,6 +19,8 @@ export class PlantsComponent {
   }
 
   plantz: Plant[];
+  name: string;
+  description: string;
 
   ngOnInit() {
     this.get();

@@ -13,17 +13,14 @@ export class MyPlantsComponent {
     constructor(private plantsData: MyplaService) {
 
   }
-  //might need to change back to array
   myPlants: JoinedPlant[];
 
   ngOnInit() {
     this.get();
   }
 
-
   get() {
     this.plantsData.getMyPlants().subscribe(
-      //might need to change back to array JoinedPlant[]
       (data: JoinedPlant[]) => {
         this.myPlants = data;
       },

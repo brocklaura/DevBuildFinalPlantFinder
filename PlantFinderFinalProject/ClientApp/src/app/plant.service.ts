@@ -10,7 +10,7 @@ export class PlantService {
 
   }
 
-  getPlants(): Observable<Plant[]> {
+  getPlants(){
     return this.http.get<Plant[]>('/api/plant');
   }
 

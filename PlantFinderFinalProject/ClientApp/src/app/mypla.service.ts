@@ -9,7 +9,7 @@ export class MyplaService {
 
   }
 
-  getMyPlants() : Observable<JoinedPlant[]> {
+  getMyPlants(): Observable<JoinedPlant[]> {
     return this.http.get<JoinedPlant[]>('/api/MyPlants/1');
   }
 

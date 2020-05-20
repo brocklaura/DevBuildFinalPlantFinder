@@ -1,4 +1,6 @@
-﻿import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Plant } from '../interfaces/plant';
+import { PlantService } from '../plant.service'
 
 @Component({
     selector: 'app-plant-details',
@@ -7,8 +9,10 @@
 })
 /** plant-details component*/
 export class PlantDetailsComponent {
+  @Input() plant: Plant;
     /** plant-details ctor */
-    constructor() {
+    constructor(private plantservice: PlantService) {
 
-    }
+  }
+  edit
 }

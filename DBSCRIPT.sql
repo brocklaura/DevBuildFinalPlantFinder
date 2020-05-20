@@ -2,7 +2,7 @@ USE master
 IF EXISTS(select * from sys.databases where name='PlantFinderDB')
 ALTER DATABASE PlantFinderDB  SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 
-DROP DATABASE PlantFinderDB
+DROP DATABASE IF EXISTS PlantFinderDB
 GO
 CREATE DATABASE PlantFinderDB
 GO

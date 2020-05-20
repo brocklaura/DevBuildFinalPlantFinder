@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { MyPlants } from './interfaces/plant'
+import { MyPlants, JoinedPlant } from './interfaces/plant'
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class MyplaService {
@@ -8,8 +9,8 @@ export class MyplaService {
 
   }
 
-  getMyPlants() {
-    return this.http.get<MyPlants>('/api/MyPlant')
+  getMyPlants() : Observable<JoinedPlant[]> {
+    return this.http.get<JoinedPlant[]>('/api/MyPlants/1');
   }
 
   getMyPlant(id: number) {

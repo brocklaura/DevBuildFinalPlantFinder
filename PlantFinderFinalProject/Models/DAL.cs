@@ -84,8 +84,8 @@ namespace PlantFinderFinalProject.Models
 
         public int AddToMyPlants(MyPlants myPlants)
         {
-            string command = "INSERT INTO My_Plants (ID, Water_Completed) ";
-            command += "VALUES (@ID, @Water_Completed)";
+            string command = "INSERT INTO My_Plants (ID, PlantID, Water_Completed) ";
+            command += "VALUES (@ID, @PlantID, @Water_Completed)";
 
             int result = conn.Execute(command, new
             {

@@ -12,7 +12,7 @@ export class WishlistService {
   }
 
   getWishlist() {
-    return this.http.get<JoinedPlant[]>('/api/wishlist/' + this.userID);
+    return this.http.get<JoinedPlant[]>('/api/wishlist/' + 4);
   }
 
   deleteWishlist(wishID: number) {
@@ -20,14 +20,15 @@ export class WishlistService {
   }
 
   postWishlist(plantID: number) {
-    console.log(plantID);
+    console.log("The plant ID being passed into the wish object is " + plantID);
     let wish: Wishlist = {
       
-      userID: this.userID,
+      userID: 4,
       plantID: plantID
       
     };
-    console.log(wish.userID);
+    console.log("The 'wish.userID' is " + wish.userID);
+    console.log("The 'wish.plantID' is " + wish.plantID);
     return this.http.post<Wishlist>('/api/wishlist', wish);
   }
 

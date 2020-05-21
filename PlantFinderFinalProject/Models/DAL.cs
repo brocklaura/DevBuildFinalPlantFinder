@@ -49,7 +49,7 @@ namespace PlantFinderFinalProject.Models
 
         public IEnumerable<JoinedPlant> GetJoined(int id)
         {
-            string command = "SELECT * FROM Plants e JOIN My_Plants f ON e.ID = f.ID WHERE f.ID=1";
+            string command = "SELECT * FROM Plants e JOIN My_Plants f ON e.ID = f.ID WHERE f.ID=@id";
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
         }

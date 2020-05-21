@@ -1,13 +1,4 @@
 
-<div *ngFor="let p of plant">
-  <h3>{{p.title}}</h3>
-  <p>{{p.description}}</p>  <button (click)="addToWishlist(p.ID)">Add To Wishlist</button>
-
-<<<<<<< Updated upstream
-</div>
-
-<p>hey</p>
-=======
     <div>
         <h1 style="        text-align: center;
         padding: 1px;
@@ -19,7 +10,7 @@
         </h1>
 
         <div style="margin-bottom:100px;" class="myaccordion" id="accordionExample">
-            <div class="card" *ngFor="let p of plantz; let i = index">
+            <div class="card" *ngFor="let p of plant; let i = index">
                 <div class="card-header" [id]="'heading'+i">
                     <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i">
@@ -30,11 +21,11 @@
                 <div [id]="'collapse'+i" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
                     <div class="card-body">
                         <app-plant-details [plant]="p"></app-plant-details>
-                        <button (click)="add(event.id)">Add to Wishlist</button>
+                        <button (click)="addToWishlist(p.ID)">Add To Wishlist</button>
                     </div>
                 </div>
             </div>
             
         </div>
     </div>
->>>>>>> Stashed changes
+

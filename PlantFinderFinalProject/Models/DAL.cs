@@ -10,14 +10,13 @@ namespace PlantFinderFinalProject.Models
 {
     public class DAL
     {
-        //this is a comment to test github
-        //this is a comment to test my sanity - mike
         private SqlConnection conn;
         public DAL(string connectionString)
         {
             conn = new SqlConnection(connectionString);
         }
 
+        //Queries the database for all plants
         public IEnumerable<Plant> GetAllPlants()
         {
             string queryString = "SELECT * FROM Plants";
@@ -25,6 +24,7 @@ namespace PlantFinderFinalProject.Models
             return plants;
         }
 
+        //Queries the database for a plant based off of its ID
         public Plant GetPlantByID(int id)
         {
             string queryString = "SELECT * FROM Plants WHERE ID= @id";
@@ -32,7 +32,7 @@ namespace PlantFinderFinalProject.Models
             return singlePlant;
         }
 
-        //Add a Plant
+        //Adds a Plant object to the database
         public int AddPlant(Plant singlePlant)
         {
             string addString = "INSERT INTO Plants (ID, Title, Image, Description) ";
@@ -40,7 +40,7 @@ namespace PlantFinderFinalProject.Models
             return conn.Execute(addString, singlePlant);
         }
 
-        //Delete a Plant
+        //Deletes a Plant object from the database
         public int DeletePlantByID(int id)
         {
             string deleteString = "DELETE FROM Plants WHERE ID = @id";

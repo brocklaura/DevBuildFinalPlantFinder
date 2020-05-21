@@ -19,6 +19,7 @@ import { WishlistService } from './wishlist.service';
 import { TrefleService } from './trefle.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { TrefleService } from './trefle.service';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: PlantsComponent },
+      { path: '', component: PlantsComponent},
       { path: 'login', component: LoginComponent },
       { path: 'plant-details', component: PlantDetailsComponent },
       { path: 'my-plants', component: MyPlantsComponent },

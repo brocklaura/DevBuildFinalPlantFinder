@@ -21,4 +21,8 @@ export class MyplaService {
 
     return this.http.post<MyPlants>('/api/MyPlant', newPlant);
   }
+
+  deletePlant(favID: number) {
+    return this.http.delete('/api/MyPlant/' + favID);
+  }
 }

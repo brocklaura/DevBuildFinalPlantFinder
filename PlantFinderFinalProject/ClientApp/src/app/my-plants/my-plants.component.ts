@@ -1,3 +1,4 @@
+/// <reference path="../plants/plants.component.ts" />
 import { Component } from '@angular/core';
 import { MyPlants, Plant, JoinedPlant } from '../interfaces/plant';
 import { MyplaService } from '../mypla.service';

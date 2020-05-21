@@ -1,10 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Plant } from '../interfaces/plant';
 import { PlantService } from '../plant.service';
 import { WishlistService } from '../wishlist.service';
-import { TrefleService } from '../trefle.service';
-import { JoinedPlant, Plant, Wishlist } from '../interfaces/plant';
-
-
 @Component({
   selector: 'app-plants',
   templateUrl: './plants.component.html',
@@ -13,14 +10,11 @@ import { JoinedPlant, Plant, Wishlist } from '../interfaces/plant';
 /** plants component*/
 export class PlantsComponent {
   /** plants ctor */
-  constructor(private plantData: PlantService,
-    private wishlistData: WishlistService) {
+  constructor(private plantData: PlantService, private wishlistData: WishlistService) {
 
   }
 
-  plantz: Plant[];
-  name: string;
-  description: string;
+  plant: Plant[];
 
   ngOnInit() {
     this.get();
@@ -29,10 +23,17 @@ export class PlantsComponent {
   get() {
     this.plantData.getPlants().subscribe(
       (data: Plant[]) => {
-        this.plantz = data;
+        this.plant = data;
       },
       error => console.error(error)
     );
   }
+
+  addToWishlist(id: number) {
+    this.wishlistData.postWishlist(id).subscribe(
+
+    );
+  }
+
  }
 

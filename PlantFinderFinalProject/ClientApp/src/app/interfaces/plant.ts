@@ -23,6 +23,7 @@ export interface JoinedPlant {
 export interface Wishlist {
   id: number;
   userID: number;
+  plantID: number;
 }
 
 export interface Users {

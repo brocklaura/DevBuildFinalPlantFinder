@@ -1,12 +1,23 @@
-<!--<p>Plants</p>
-<div *ngFor="let p of plantz">
-  <p>{{p.title}}</p>
-  <p>{{p.description}}</p>
-</div>-->
 
+<div *ngFor="let p of plant">
+  <h3>{{p.title}}</h3>
+  <p>{{p.description}}</p>  <button (click)="addToWishlist(p.ID)">Add To Wishlist</button>
 
+<<<<<<< Updated upstream
+</div>
+
+<p>hey</p>
+=======
     <div>
-        <h1 style="text-align: center; padding: 1px; color: mediumturquoise; font-family: 'Century Gothic'; font-size:3em ;margin-top: 30px"><strong>Events</strong></h1>
+        <h1 style="        text-align: center;
+        padding: 1px;
+        color: #cc99ff;
+        font-family: 'Century Gothic';
+        font-size: 3em;
+        margin-top: 30px">
+        <strong>Plants</strong>
+        </h1>
+
         <div style="margin-bottom:100px;" class="myaccordion" id="accordionExample">
             <div class="card" *ngFor="let p of plantz; let i = index">
                 <div class="card-header" [id]="'heading'+i">
@@ -18,25 +29,12 @@
                 </div>
                 <div [id]="'collapse'+i" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
                     <div class="card-body">
-                        <h4>Topic: {{p.description}}</h4>
-                        <button (click)="add(event.id)">Add to Favorites</button>
+                        <app-plant-details [plant]="p"></app-plant-details>
+                        <button (click)="add(event.id)">Add to Wishlist</button>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button style="width:100%; text-align:center;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <h3><strong>Add New Event</strong></h3>
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Plant: <input type="text" id="plantName" [(ngModel)]="name" class="form-control"><br />                        
-                        Description: <input type="text" id="description" [(ngModel)]="description" class="form-control"><br />
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
+>>>>>>> Stashed changes

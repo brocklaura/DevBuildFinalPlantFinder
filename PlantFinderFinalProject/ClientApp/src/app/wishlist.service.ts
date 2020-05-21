@@ -19,10 +19,11 @@ export class WishlistService {
     return this.http.delete('/api/wishlist/' + wishID);
   }
 
-  postWishlist(userID: number) {
+  postWishlist(plantID: number) {
     let wish: Wishlist = {
       id: 0,
       userID: this.userID,
+      plantID: plantID
       
     };
     return this.http.post<Wishlist>('/api/wishlist', wish);

@@ -6,16 +6,16 @@ import { PlantService } from '../plant.service';
 
 
 @Component({
-    selector: 'app-wishlist',
-    templateUrl: './wishlist.component.html',
-    styleUrls: ['./wishlist.component.scss']
+  selector: 'app-wishlist',
+  templateUrl: './wishlist.component.html',
+  styleUrls: ['./wishlist.component.scss']
 })
 /** wishlist component*/
 export class WishlistComponent {
-    /** wishlist ctor */
+  /** wishlist ctor */
   constructor(private wishlistData: WishlistService) { }
 
-    wishlist: JoinedPlant[];
+  wishlist: JoinedPlant[];
 
   ngOnInit() {
     this.get();
@@ -40,5 +40,3 @@ export class WishlistComponent {
     );
   }
 }
-
-

@@ -28,9 +28,9 @@ namespace PlantFinderFinalProject.Controllers
         }
 
         [HttpPost]
-        public int AddToWishlist(Wishlist wishlist)
+        public int AddToWishlist(int userID, int plantID)
         {
-            int result = dal.AddToWishlist(wishlist);
+            int result = dal.AddToWishlist(userID, plantID);
             return result;
         }
 

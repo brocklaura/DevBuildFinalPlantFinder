@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Plant } from '../interfaces/plant';
 import { PlantService } from '../plant.service';
-
+import { WishlistService } from '../wishlist.service';
 @Component({
   selector: 'app-plants',
   templateUrl: './plants.component.html',
@@ -10,7 +10,7 @@ import { PlantService } from '../plant.service';
 /** plants component*/
 export class PlantsComponent {
   /** plants ctor */
-  constructor(private plantData: PlantService) {
+  constructor(private plantData: PlantService, private wishlistData: WishlistService) {
 
   }
 
@@ -28,5 +28,12 @@ export class PlantsComponent {
       error => console.error(error)
     );
   }
+
+  addToWishlist(id: number) {
+    this.wishlistData.postWishlist(id).subscribe(
+
+    );
+  }
+
  }
 

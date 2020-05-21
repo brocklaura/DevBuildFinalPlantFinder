@@ -63,21 +63,22 @@ namespace PlantFinderFinalProject.Models
         }
 
         //Add to favorites
-        public int AddToWishlist(Wishlist wishlist)
+        public int AddToWishlist(int userID, int plantID)
         {
-            string command = "INSERT INTO Wish_List (ID, UserID, PlantID) ";
-            command += "VALUES (@ID, @userID, @PlantID)";
+            string command = "INSERT INTO Wish_List (UserID, PlantID) ";
+            command += "VALUES (@UserID, @PlantID)";
+
+
 
             int result = conn.Execute(command, new
             {
-                eventID = wishlist.ID,
-                userID = wishlist.UserID,
+                UserID = userID,
+                PlantID = plantID
             });
             return result;
         }
-
-        //Delete from favorites
-        public int DeleteWishlistByID(int id)
+            //Delete from favorites
+            public int DeleteWishlistByID(int id)
         {
             string deleteString = "DELETE FROM Wish_List WHERE ID = @id";
             return conn.Execute(deleteString, new { id = id });

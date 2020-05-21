@@ -1,7 +1,8 @@
 
-<div *ngFor="let p of plants">
+<div *ngFor="let p of plant">
   <h3>{{p.title}}</h3>
-  <h4>{{p.desciption}}</h4>
+  <p>{{p.description}}</p>  <button (click)="addToWishlist(p.ID)">Add To Wishlist</button>
+
 </div>
 
 <p>hey</p>

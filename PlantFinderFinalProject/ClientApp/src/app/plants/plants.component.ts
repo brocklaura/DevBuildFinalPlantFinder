@@ -29,11 +29,7 @@ export class PlantsComponent {
     );
   }
 
-  addToWishlist(id: number) {
-    this.wishlistData.postWishlist(id).subscribe(
-
-    );
-  }
+  
 
  }
 

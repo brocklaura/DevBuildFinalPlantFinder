@@ -4,10 +4,10 @@ import { Wishlist, JoinedPlant } from './interfaces/plant';
 
 @Injectable()
 export class WishlistService {
-  userID: number;
+  userID: 4;
 
   constructor(private http: HttpClient) {
-    this.userID = 0;
+    
 
   }
 
@@ -20,12 +20,14 @@ export class WishlistService {
   }
 
   postWishlist(plantID: number) {
+    console.log(plantID);
     let wish: Wishlist = {
-      id: 0,
+      
       userID: this.userID,
       plantID: plantID
       
     };
+    console.log(wish.userID);
     return this.http.post<Wishlist>('/api/wishlist', wish);
   }
 

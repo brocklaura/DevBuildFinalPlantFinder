@@ -27,4 +27,14 @@ export class MyPlantsComponent {
       error => console.error(error)
     );
   }
+
+  delete(id: number) {
+    this.plantsData.deletePlant(id).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.get();
+      },
+      error => console.error(error)
+    );
+  }
 }

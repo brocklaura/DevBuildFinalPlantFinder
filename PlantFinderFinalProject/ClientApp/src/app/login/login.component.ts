@@ -1,4 +1,5 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -8,7 +9,17 @@
 /** login component*/
 export class LoginComponent {
     /** login ctor */
-    constructor() {
+  constructor(private router: Router) { }
 
+  loginPage(): void {
+
+    
+      this.router.navigate(['/', 'my-plants']).then(nav => {
+        console.log(nav); // true if navigation is successful
+      }, err => {
+        console.log(err) // when there's an error
+      });
     }
+
+    
 }

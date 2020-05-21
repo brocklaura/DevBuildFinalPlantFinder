@@ -69,7 +69,6 @@ namespace PlantFinderFinalProject.Models
             command += "VALUES (@UserID, @PlantID)";
 
 
-
             int result = conn.Execute(command, new
             {
                 UserID = userID,

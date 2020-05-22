@@ -9,6 +9,6 @@ namespace PlantFinderFinalProject.Models
     {
         public int ID { get; set; }
         public int UserID { get; set; }
-        public object PlantID { get; internal set; }
+        public int PlantID { get; internal set; }
     }
 }

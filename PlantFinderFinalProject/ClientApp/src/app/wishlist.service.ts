@@ -5,9 +5,10 @@ import { Wishlist, JoinedPlant } from './interfaces/plant';
 @Injectable()
 export class WishlistService {
   userID: number;
+  plantID: number;
 
   constructor(private http: HttpClient) {
-
+    this.userID = 4;
 
   }
 
@@ -23,7 +24,7 @@ export class WishlistService {
     console.log("The plant ID being passed into the wish object is " + plantID);
     let wish: Wishlist = {
       
-      userID: 4,
+      userID: this.userID,
       plantID: plantID
       
     };

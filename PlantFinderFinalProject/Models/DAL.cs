@@ -11,7 +11,7 @@ namespace PlantFinderFinalProject.Models
     public class DAL
     {
         private SqlConnection conn;
-
+        
         public DAL(string connectionString)
         {
             conn = new SqlConnection(connectionString);
@@ -57,31 +57,29 @@ namespace PlantFinderFinalProject.Models
 
         public IEnumerable<JoinedPlant> GetWishlist(int id)
         {
-            string command = "SELECT * ";
-            command += "FROM Plants e JOIN Wish_List f ON e.ID = f.ID WHERE f.UserID=@id";
+            string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
+            command += "FROM Wish_List w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
+
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
         }
 
-       // Add to favorites
-        public int AddToWishlist(int userID, int plantID)
+        //Add to favorites
+        public int AddToWishlist(Wishlist w)
         {
             string command = "INSERT INTO Wish_List (UserID, PlantID) ";
-            command += "VALUES (@userID, @plantID)";
+            command += "VALUES (@UserID, @PlantID)";
 
 
             int result = conn.Execute(command, new
             {
-                UserID = userID,
-                PlantID = plantID
+                UserID = w.UserID,
+                PlantID = w.PlantID
             });
             return result;
         }
-
-
-    
-     //   Delete from favorites
-        public int DeleteWishlistByID(int id)
+            //Delete from favorites
+            public int DeleteWishlistByID(int id)
         {
             string deleteString = "DELETE FROM Wish_List WHERE ID = @id";
             return conn.Execute(deleteString, new { id = id });

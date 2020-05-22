@@ -70,6 +70,7 @@ namespace PlantFinderFinalProject.Models
             string command = "INSERT INTO Wish_List (UserID, PlantID) ";
             command += "VALUES (@UserID, @PlantID)";
 
+            
 
             int result = conn.Execute(command, new
             {

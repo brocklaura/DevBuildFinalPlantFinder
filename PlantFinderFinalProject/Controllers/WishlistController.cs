@@ -28,10 +28,29 @@ namespace PlantFinderFinalProject.Controllers
         }
 
         [HttpPost]
-        public int AddToWishlist(int userID, int plantID)
+        public Object AddToWishlist(Wishlist w)
         {
-            int result = dal.AddToWishlist(userID, plantID);
-            return result;
+            IEnumerable<JoinedPlant> wishlist = dal.GetWishlist(w.UserID);
+            int plantID = w.PlantID;
+            int result = 0;
+
+            foreach (JoinedPlant plant in wishlist)
+            {
+                if (plant.ID == (int)w.PlantID)
+                {
+                    return new
+                    {
+                        result = result,
+                        success = result == 1 ? true : false
+                    };
+                }
+            }
+            result = dal.AddToWishlist(w);
+            return new
+            {
+                result = result,
+                success = result == 1 ? true : false
+            };
         }
 
         [HttpDelete("{id}")]

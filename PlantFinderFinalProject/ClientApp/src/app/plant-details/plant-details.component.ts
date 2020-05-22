@@ -17,7 +17,7 @@ export class PlantDetailsComponent {
   }
   addToWishlist(id: number) {
     this.wishlistData.postWishlist(id).subscribe(
-      (data: Wishlist) => console.log('num in component.ts ' + id), //TODO: change the button
+      (data: any) => console.log('success! ' + id),
       error => console.error(error)
     );
   }

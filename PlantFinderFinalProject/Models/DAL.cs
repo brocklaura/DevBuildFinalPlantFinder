@@ -11,7 +11,7 @@ namespace PlantFinderFinalProject.Models
     public class DAL
     {
         private SqlConnection conn;
-        
+
         public DAL(string connectionString)
         {
             conn = new SqlConnection(connectionString);
@@ -63,11 +63,11 @@ namespace PlantFinderFinalProject.Models
             return result;
         }
 
-        //Add to favorites
+       // Add to favorites
         public int AddToWishlist(int userID, int plantID)
         {
             string command = "INSERT INTO Wish_List (UserID, PlantID) ";
-            command += "VALUES (@UserID, @PlantID)";
+            command += "VALUES (@userID, @plantID)";
 
 
             int result = conn.Execute(command, new
@@ -77,8 +77,11 @@ namespace PlantFinderFinalProject.Models
             });
             return result;
         }
-            //Delete from favorites
-            public int DeleteWishlistByID(int id)
+
+
+    
+     //   Delete from favorites
+        public int DeleteWishlistByID(int id)
         {
             string deleteString = "DELETE FROM Wish_List WHERE ID = @id";
             return conn.Execute(deleteString, new { id = id });

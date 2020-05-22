@@ -4,10 +4,10 @@ import { Wishlist, JoinedPlant } from './interfaces/plant';
 
 @Injectable()
 export class WishlistService {
-  userID: 4;
+  userID: number;
 
   constructor(private http: HttpClient) {
-    
+
 
   }
 

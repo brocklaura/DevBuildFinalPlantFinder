@@ -54,10 +54,10 @@ namespace PlantFinderFinalProject.Controllers
         }
 
         [HttpDelete("{id}")]
-        public int DeleteWishlist(int id)
+        public Object DeleteWishlist(int id)
         {
-            int result = dal.DeleteWishlistByID(id);
-            return result;
+            return dal.DeleteWishlistByID(id);
+           
         }
     }
 }

@@ -1,4 +1,5 @@
-<h1 style="text-align: center; padding: 1px; color: navy; margin-top: 50px">Wishlist</h1>
+
+<h1 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">Wishlist</h1>
 <div style="margin-bottom:100px" class="myaccordion" id="accordionExample">
   <div class="card" *ngFor="let w of wishlist; let i = index">
     <div class="card-header" [id]="'heading'+i">
@@ -12,7 +13,8 @@
       <div class="card-body">
 
         Description: {{w.description}}<br />
-        <button (click)="delete(JoinedPlant.id)" class="btn btn-outline-danger btn-block">Remove from wishlist</button>
+        <button (click)="delete(w.id)" class="delete">Remove from wishlist</button><br />
+        <button class="add">Add To My Plants</button>
       </div>
     </div>
   </div>

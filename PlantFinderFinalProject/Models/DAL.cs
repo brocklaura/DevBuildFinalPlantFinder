@@ -80,10 +80,15 @@ namespace PlantFinderFinalProject.Models
             return result;
         }
             //Delete from favorites
-            public int DeleteWishlistByID(int id)
+            public Object DeleteWishlistByID(int id)
         {
             string deleteString = "DELETE FROM Wish_List WHERE ID = @id";
-            return conn.Execute(deleteString, new { id = id });
+            int results= conn.Execute(deleteString, new { id = id });
+            return new
+            {
+                result = results,
+                success = results == 1 ? true : false
+            };
         }
 
         public int AddToMyPlants(MyPlants myPlants)

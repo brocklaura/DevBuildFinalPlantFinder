@@ -103,7 +103,7 @@ namespace PlantFinderFinalProject.Models
 
         public int DeleteFromMyPlants(int id)
         {
-            string deleteString = "DELETE FROM My_Plants WHERE ID = @id";
+            string deleteString = "EXEC DeleteFromMyPlants @id";
             return conn.Execute(deleteString, new { id = id });
         }
 

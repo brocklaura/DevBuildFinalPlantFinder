@@ -20,7 +20,7 @@ namespace PlantFinderFinalProject.Models
         //Queries the database for all plants
         public IEnumerable<Plant> GetAllPlants()
         {
-            string queryString = "SELECT * FROM Plants";
+            string queryString = "EXEC GetPlants";
             IEnumerable<Plant> plants = conn.Query<Plant>(queryString);
             return plants;
         }
@@ -28,7 +28,7 @@ namespace PlantFinderFinalProject.Models
         //Queries the database for a plant based off of its ID
         public Plant GetPlantByID(int id)
         {
-            string queryString = "SELECT * FROM Plants WHERE ID= @id";
+            string queryString = "EXEC GetPlantByID @id";
             Plant singlePlant = conn.QueryFirst<Plant>(queryString, new { id = id });
             return singlePlant;
         }
@@ -44,21 +44,23 @@ namespace PlantFinderFinalProject.Models
         //Deletes a Plant object from the database
         public int DeletePlantByID(int id)
         {
-            string deleteString = "DELETE FROM Plants WHERE ID = @id";
+            string deleteString = "EXEC DeletePlantByID @id";
             return conn.Execute(deleteString, new { id = id });
         }
 
         public IEnumerable<JoinedPlant> GetJoined(int id)
         {
-            string command = "SELECT * FROM Plants e JOIN My_Plants f ON e.ID = f.ID WHERE f.ID=@id";
+            string command = "EXEC GetJoined @id";
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
         }
 
         public IEnumerable<JoinedPlant> GetWishlist(int id)
         {
-            string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
-            command += "FROM Wish_List w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
+            //string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
+            //command += "FROM Wish_List w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
+            string command = "EXEC GetWishlist @id";
+            
 
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
@@ -67,8 +69,8 @@ namespace PlantFinderFinalProject.Models
         //Add to favorites
         public int AddToWishlist(Wishlist w)
         {
-            string command = "INSERT INTO Wish_List (UserID, PlantID) ";
-            command += "VALUES (@UserID, @PlantID)";
+            string command = "EXEC AddToWishlist @UserID, @PlantID";
+            
 
             
 
@@ -82,7 +84,7 @@ namespace PlantFinderFinalProject.Models
             //Delete from favorites
             public int DeleteWishlistByID(int id)
         {
-            string deleteString = "DELETE FROM Wish_List WHERE ID = @id";
+            string deleteString = "EXEC DeleteWishlistByID @id";
             return conn.Execute(deleteString, new { id = id });
         }
 

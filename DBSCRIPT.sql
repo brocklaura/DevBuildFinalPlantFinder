@@ -95,3 +95,96 @@ INSERT INTO wish_list(UserID, PlantID)
 VALUES
 (3, 6),
 (4, 7);
+
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[GetPlants]
+GO
+
+CREATE PROCEDURE GetPlants
+AS
+SELECT *
+FROM Plants
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[GetPlantByID]
+GO
+
+CREATE PROCEDURE GetPlantByID @id INT
+AS
+SELECT *
+FROM Plants
+WHERE ID = @id
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[DeletePlantByID]
+GO
+
+CREATE PROCEDURE DeletePlantByID @id INT
+AS
+DELETE
+FROM Plants
+WHERE ID = @id
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[GetJoined]
+GO
+
+CREATE PROCEDURE GetJoined @id INT
+AS
+SELECT *
+FROM Plants e
+JOIN My_Plants f
+ON e.ID = f.ID
+WHERE f.ID=@id
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[GetWishlist]
+GO
+
+CREATE PROCEDURE GetWishlist @id INT
+AS
+SELECT *
+FROM Wish_List w
+INNER JOIN Plants p
+ON w.PlantID = p.ID
+WHERE w.UserID=@id
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[AddToWishlist]
+GO
+
+CREATE PROCEDURE AddToWishlist @UserID INT, @PlantID INT
+AS
+INSERT INTO Wish_List (UserID, PlantID)
+VALUES (@UserID, @PlantID)
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[DeleteWishlistByID]
+GO
+
+CREATE PROCEDURE DeleteWishlistByID @id INT
+AS
+DELETE
+FROM Wish_List
+WHERE ID = @id
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[AddToMyPlants]
+GO
+
+CREATE PROCEDURE AddToMyPlants @ID INT, @PlantID INT, @Water_Completed BIT
+AS
+INSERT INTO My_Plants (ID, PlantID, Water_Completed)
+VALUES (@ID, @PlantID, @Water_Completed)
+GO
+
+DROP PROCEDURE IF EXISTS [dbo].[DeleteFromMyPlants]
+GO
+
+CREATE PROCEDURE DeleteFromMyPlants @id INT
+AS
+DELETE
+FROM My_Plants
+WHERE ID = @id
+GO

@@ -11,7 +11,7 @@ namespace PlantFinderFinalProject.Models
     public class DAL
     {
         private SqlConnection conn;
-        
+
         public DAL(string connectionString)
         {
             conn = new SqlConnection(connectionString);
@@ -51,7 +51,7 @@ namespace PlantFinderFinalProject.Models
         public IEnumerable<JoinedPlant> GetJoined(int id)
         {
             //string command = "EXEC GetJoined @id";
-            string command = "SELECT w.ID, w.UserID, w.PlantID, p.Title, p.Image, p.Description ";
+            string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
             command += "FROM My_Plants w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
@@ -62,7 +62,7 @@ namespace PlantFinderFinalProject.Models
             //string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
             //command += "FROM Wish_List w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
             string command = "EXEC GetWishlist @id";
-            
+
 
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
@@ -73,6 +73,9 @@ namespace PlantFinderFinalProject.Models
         {
             string command = "EXEC AddToWishlist @UserID, @PlantID";
 
+
+
+
             int result = conn.Execute(command, new
             {
                 UserID = w.UserID,
@@ -80,24 +83,18 @@ namespace PlantFinderFinalProject.Models
             });
             return result;
         }
-            //Delete from favorites
-            public Object DeleteWishlistByID(int id)
+        //Delete from favorites
+        public int DeleteWishlistByID(int id)
         {
             string deleteString = "EXEC DeleteWishlistByID @id";
-            int results =  conn.Execute(deleteString, new { id = id });
-
-            return new
-            {
-                result = results,
-                success = results == 1 ? true : false
-            };
+            return conn.Execute(deleteString, new { id = id });
         }
 
         public int AddToMyPlants(MyPlants m)
         {
             string command = "INSERT INTO My_Plants (Water_Completed, UserID, PlantID) ";
             command += "VALUES (@Water_Completed, @UserID, @PlantID)";
-            
+
 
             int result = conn.Execute(command, new
             {
@@ -121,7 +118,7 @@ namespace PlantFinderFinalProject.Models
 
         public int DeleteFromMyPlants(int id)
         {
-            string deleteString = "delete from my_plants where ID = @id";
+            string deleteString = "EXEC DeleteFromMyPlants @id";
             return conn.Execute(deleteString, new { id = id });
         }
 

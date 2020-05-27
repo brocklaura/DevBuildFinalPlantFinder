@@ -186,5 +186,5 @@ CREATE PROCEDURE DeleteFromMyPlants @id INT
 AS
 DELETE
 FROM My_Plants
-WHERE ID = @id
+WHERE PlantID = @id
 GO

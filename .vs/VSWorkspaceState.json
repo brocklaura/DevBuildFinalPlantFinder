@@ -1,12 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\DevBuildFinalPlantFinder",
+    "\\PlantFinderFinalProject",
+    "\\PlantFinderFinalProject\\ClientApp",
+    "\\PlantFinderFinalProject\\ClientApp\\src",
     "\\PlantFinderFinalProject\\Controllers",
     "\\PlantFinderFinalProject\\Models",
     "\\PlantFinderFinalProject\\Pages",
     "\\PlantFinderFinalProject\\Properties",
     "\\PlantFinderFinalProject\\wwwroot"
   ],
-  "SelectedNode": "\\PlantFinderFinalProject.sln",
+  "SelectedNode": "\\DevBuildFinalPlantFinder\\PlantFinderFinalProject.sln",
   "PreviewInSolutionExplorer": false
 }

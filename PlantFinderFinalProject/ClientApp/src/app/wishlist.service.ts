@@ -17,6 +17,7 @@ export class WishlistService {
   }
 
   deleteWishlist(wishID: number) {
+    console.log("delete Id in wishlist service " + wishID);
     return this.http.delete('/api/wishlist/' + wishID);
   }
 

@@ -22,6 +22,7 @@ export class WishlistComponent {
   }
 
   delete(id: number) {
+    console.log(id);
     this.wishlistData.deleteWishlist(id).subscribe(
       (data: any) => {
         console.log('DELETE WISHLIST DATA' + data);

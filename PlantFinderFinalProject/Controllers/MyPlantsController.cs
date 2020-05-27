@@ -28,10 +28,29 @@ namespace PlantFinderFinalProject.Controllers
         }
 
         [HttpPost]
-        public int AddToMyPlants(MyPlants myPlants)
+        public Object AddToMyPlants(MyPlants w)
         {
-            int result = dal.AddToMyPlants(myPlants);
-            return result;
+            IEnumerable<JoinedPlant> m = dal.GetMyPlants(w.UserID);
+            int plantID = w.PlantID;
+            int result = 0;
+
+            foreach (JoinedPlant plant in m)
+            {
+                if (plant.ID == (int)w.PlantID)
+                {
+                    return new
+                    {
+                        result = result,
+                        success = result == 1 ? true : false
+                    };
+                }
+            }
+            result = dal.AddToMyPlants(w);
+            return new
+            {
+                result = result,
+                success = result == 1 ? true : false
+            };
         }
 
         [HttpDelete("{id}")]

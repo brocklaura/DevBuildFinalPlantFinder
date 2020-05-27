@@ -50,7 +50,9 @@ namespace PlantFinderFinalProject.Models
 
         public IEnumerable<JoinedPlant> GetJoined(int id)
         {
-            string command = "EXEC GetJoined @id";
+            //string command = "EXEC GetJoined @id";
+            string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
+            command += "FROM My_Plants w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
         }
@@ -91,16 +93,29 @@ namespace PlantFinderFinalProject.Models
             };
         }
 
-        public int AddToMyPlants(MyPlants myPlants)
+        public int AddToMyPlants(MyPlants m)
         {
-            string command = "INSERT INTO My_Plants (ID, PlantID, Water_Completed) ";
-            command += "VALUES (@ID, @PlantID, @Water_Completed)";
+            string command = "INSERT INTO My_Plants (Water_Completed, UserID, PlantID) ";
+            command += "VALUES (@Water_Completed, @UserID, @PlantID)";
+            
 
             int result = conn.Execute(command, new
             {
-                eventID = myPlants.ID,
-                userID = myPlants.UserID,
+                water_Completed = m.WaterCompleted,
+                userID = m.UserID,
+                plantID = m.PlantID,
             });
+            return result;
+        }
+
+        public IEnumerable<JoinedPlant> GetMyPlants(int id)
+        {
+
+            string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
+            command += "FROM My_Plants w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
+
+
+            IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
         }
 

@@ -51,7 +51,7 @@ namespace PlantFinderFinalProject.Models
         public IEnumerable<JoinedPlant> GetJoined(int id)
         {
             //string command = "EXEC GetJoined @id";
-            string command = "SELECT w.ID, w.UserID, w.PlantID, p.Title, p.Image, p.Description ";
+            string command = "SELECT w.ID, w.UserID, w.PlantID, p.ID, p.Title, p.Image, p.Description ";
             command += "FROM My_Plants w INNER JOIN Plants p ON w.PlantID = p.ID WHERE w.UserID=@id";
             IEnumerable<JoinedPlant> result = conn.Query<JoinedPlant>(command, new { id = id });
             return result;
@@ -87,7 +87,7 @@ namespace PlantFinderFinalProject.Models
             public int DeleteWishlistByID(int id)
         {
             string deleteString = "EXEC DeleteWishlistByID @id";
-            return conn.Execute(deleteString, new { id = id });
+            return conn.Execute(deleteString, new { id = id});
         }
 
         public int AddToMyPlants(MyPlants m)
@@ -118,7 +118,7 @@ namespace PlantFinderFinalProject.Models
 
         public int DeleteFromMyPlants(int id)
         {
-            string deleteString = "delete from my_plants where ID = @id";
+            string deleteString = "EXEC DeleteFromMyPlants @id";
             return conn.Execute(deleteString, new { id = id });
         }
 

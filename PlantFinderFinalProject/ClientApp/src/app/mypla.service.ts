@@ -18,7 +18,6 @@ export class MyplaService {
   }
 
   postMyPlant(newPlant: MyPlants) {
-
     return this.http.post<MyPlants>('/api/MyPlant', newPlant);
   }
 

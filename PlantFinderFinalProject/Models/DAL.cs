@@ -70,9 +70,6 @@ namespace PlantFinderFinalProject.Models
         public int AddToWishlist(Wishlist w)
         {
             string command = "EXEC AddToWishlist @UserID, @PlantID";
-            
-
-            
 
             int result = conn.Execute(command, new
             {
@@ -82,10 +79,16 @@ namespace PlantFinderFinalProject.Models
             return result;
         }
             //Delete from favorites
-            public int DeleteWishlistByID(int id)
+            public Object DeleteWishlistByID(int id)
         {
             string deleteString = "EXEC DeleteWishlistByID @id";
-            return conn.Execute(deleteString, new { id = id });
+            int results =  conn.Execute(deleteString, new { id = id });
+
+            return new
+            {
+                result = results,
+                success = results == 1 ? true : false
+            };
         }
 
         public int AddToMyPlants(MyPlants myPlants)

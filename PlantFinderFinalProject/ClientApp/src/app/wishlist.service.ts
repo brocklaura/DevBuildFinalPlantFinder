@@ -9,7 +9,6 @@ export class WishlistService {
 
   constructor(private http: HttpClient) {
     this.userID = 4;
-
   }
 
   getWishlist() {
@@ -23,15 +22,14 @@ export class WishlistService {
   postWishlist(plantID: number) {
     console.log("The plant ID being passed into the wish object is " + plantID);
     let wish: Wishlist = {
-      
-      
+
+      wishID: 0,
       userID: this.userID,
       plantID: plantID
-      
+
     };
     console.log("The 'wish.userID' is " + wish.userID);
     console.log("The 'wish.plantID' is " + wish.plantID);
     return this.http.post<Wishlist>('/api/wishlist', wish);
   }
-
 }

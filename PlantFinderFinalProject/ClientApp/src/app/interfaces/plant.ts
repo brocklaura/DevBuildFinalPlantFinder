@@ -18,11 +18,12 @@ export interface JoinedPlant {
   title: string;
   image: string;
   description: string;
+  wishID: number;
 }
 
 export interface Wishlist {
   
-  
+  wishID: number;
   userID: number;
   plantID: number;
 }

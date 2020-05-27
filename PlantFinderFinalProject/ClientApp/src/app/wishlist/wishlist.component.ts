@@ -27,7 +27,7 @@ export class WishlistComponent {
         console.log('DELETE WISHLIST DATA' + data);
         this.get();
       },
-      error => console.error(error)
+      //error => console.error(error)
     );
   }
 

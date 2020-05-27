@@ -41,6 +41,6 @@ export class MyplaService {
   }
 
   deletePlant(favID: number) {
-    return this.http.delete('/api/MyPlant/' + favID);
+    return this.http.delete('/api/MyPlants/' + favID);
   }
 }

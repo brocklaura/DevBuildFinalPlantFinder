@@ -12,7 +12,7 @@ export interface MyPlants {
 }
 
 export interface JoinedPlant {
-  id: number;
+  plantID: number;
   userID: number,
   waterCompleted: boolean;
   title: string;

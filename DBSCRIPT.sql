@@ -167,7 +167,7 @@ CREATE PROCEDURE DeleteWishlistByID @id INT
 AS
 DELETE
 FROM Wish_List
-WHERE ID = @id
+WHERE PlantID = @id
 GO
 
 DROP PROCEDURE IF EXISTS [dbo].[AddToMyPlants]
@@ -186,5 +186,5 @@ CREATE PROCEDURE DeleteFromMyPlants @id INT
 AS
 DELETE
 FROM My_Plants
-WHERE ID = @id
+WHERE PlantID = @id
 GO

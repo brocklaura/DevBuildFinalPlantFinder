@@ -87,7 +87,7 @@ namespace PlantFinderFinalProject.Models
         public int DeleteWishlistByID(int id)
         {
             string deleteString = "EXEC DeleteWishlistByID @id";
-            return conn.Execute(deleteString, new { id = id });
+            return conn.Execute(deleteString, new { id = id});
         }
 
         public int AddToMyPlants(MyPlants m)

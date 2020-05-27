@@ -15,6 +15,7 @@ export class MyPlantsComponent {
 
   }
   myPlants: JoinedPlant[];
+  //objPatch: patchWater; //added for patch
   
 
   ngOnInit() {
@@ -39,4 +40,27 @@ export class MyPlantsComponent {
       error => console.error(error)
     );
   }
+
+  remaining(): number {
+
+    return this.myPlants.filter(todo => !todo.waterCompleted).length;
+  }
+
+  doneWatering(): string {
+    if (this.remaining() == 0) {
+      return 'Congrats you are all done watering!!';
+    }
+  }
+
+  //added for patch
+  //patch() {
+  //  this.plantsData.patch(opost).subscribe
+  //  (
+  //    data =>
+  //    {
+  //      this.objPatch = data;
+  //    }
+  //  )
+
+//}
 }

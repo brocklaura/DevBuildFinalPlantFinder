@@ -43,4 +43,10 @@ export class MyplaService {
   deletePlant(favID: number) {
     return this.http.delete('/api/MyPlants/' + favID);
   }
+
+  //added patch
+  //patchWaterCompleted(opost: patchWater): Observable<any> {
+  //  return this.http.patch("https://localhost:44397/my-plants/", opost)
+  //}
+
 }

@@ -37,3 +37,11 @@ export interface Users {
   lname: string;
 
 }
+
+//added for patch
+//export class patchWater {
+//  id: number;
+//  Water_Completed: boolean;
+//  UserID: number;
+//  PlantID: number;
+//}

@@ -17,7 +17,7 @@
       <div [id]="'collapse'+i" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
         <div class="card-body">
           <h4>Description: {{p.description}}</h4>
-          <button (click)="delete(plant.id)">Delete From List</button>
+          <button (click)="delete(p.id)">Delete From List</button>
         </div>
       </div>
     </div>

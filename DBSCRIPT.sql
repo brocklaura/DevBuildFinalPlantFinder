@@ -133,10 +133,10 @@ GO
 CREATE PROCEDURE GetJoined @id INT
 AS
 SELECT *
-FROM Plants e
-JOIN My_Plants f
-ON e.ID = f.ID
-WHERE f.ID=@id
+FROM My_plants e
+JOIN Plants f
+ON e.PlantID = f.ID
+WHERE f.UserID=@id
 GO
 
 DROP PROCEDURE IF EXISTS [dbo].[GetWishlist]

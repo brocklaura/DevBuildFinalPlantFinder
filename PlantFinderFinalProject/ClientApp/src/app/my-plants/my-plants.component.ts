@@ -15,6 +15,7 @@ export class MyPlantsComponent {
 
   }
   myPlants: JoinedPlant[];
+  
 
   ngOnInit() {
     this.get();
@@ -32,7 +33,7 @@ export class MyPlantsComponent {
   delete(id: number) {
     this.plantsData.deletePlant(id).subscribe(
       (data: any) => {
-        console.log(data);
+        console.log("the plant id being passed id" + id);
         this.get();
       },
       error => console.error(error)

@@ -3,7 +3,7 @@ import { WishlistService } from '../wishlist.service';
 import { TrefleService } from '../trefle.service';
 import { JoinedPlant, Plant, Wishlist } from '../interfaces/plant';
 import { PlantService } from '../plant.service';
-
+import { MyplaService } from '../mypla.service';
 
 @Component({
   selector: 'app-wishlist',
@@ -13,7 +13,7 @@ import { PlantService } from '../plant.service';
 /** wishlist component*/
 export class WishlistComponent {
   /** wishlist ctor */
-  constructor(private wishlistData: WishlistService) { }
+  constructor(private wishlistData: WishlistService, private plantData: PlantService, private myplantData: MyplaService) { }
 
   wishlist: JoinedPlant[];
 
@@ -29,6 +29,13 @@ export class WishlistComponent {
         this.get();
       },
       //error => console.error(error)
+    );
+  }
+
+  addToMyPlants(id: number) {
+    this.myplantData.postMyPlant(id).subscribe(
+      (data: any) => console.log('success! ' + id),
+      error => console.error(error)
     );
   }
 

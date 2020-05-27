@@ -13,7 +13,7 @@
       <div class="card-body">          
         Description: {{w.description}}<br />
         <button (click)="delete(w.id)" class="delete">Remove from wishlist</button><br />
-        <button class="add">Add To My Plants</button>
+        <button (click)="addToMyPlants(w.id)">Add To My Plants</button>
       </div>
     </div>
   </div>

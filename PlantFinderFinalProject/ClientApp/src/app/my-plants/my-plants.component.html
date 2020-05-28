@@ -21,45 +21,8 @@
     </div>
   </div>
 </div>-->
-<style>
-  h3 {
-  color: #617B5C;
-  font-family: 'Nanum Gothic', sans-serif;
-  align-items: center;
-  display: inline-block;
-  
-}
 
-  h4 {
-  color: #617B5C;
-  font-family: 'Nanum Gothic', sans-serif;
-  display: inline-block;
-  text-align: right;
-  
-  }
-button {
-  border-style: none;
-  background-color: white;
-  display: inline-block;
-}
-
-.containter {
-  border: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  width: 600px;
-  margin: auto;
-  background-color: white;
-}
-.delete {
-  width: 100px;
-  color: white;
-  background-color:darkred;
-  display: inline-block;
-}
-</style>
-
-<h5 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">Water Tracker</h5>
+<h1 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">Water Tracker</h1>
 <div class="containter">
   <div *ngFor="let p of myPlants; let i = index">
     <button (click)="delete(p.id)"><img src="https://vignette.wikia.nocookie.net/play-rust/images/7/7f/Water_icon.png/revision/latest/top-crop/width/360/height/360?cb=20151106061403" width="40px"></button>
@@ -68,7 +31,7 @@ button {
 
     <hr style="width:90%;text-align:left;margin-left:50px;">
   </div>
-  <h4 style="text-align: right"> {{ remaining() }} plants left to water! <br />
+  <h4 style="text-align: center; color: #617B5C;"> {{ remaining() }} plants left to water! <br />
    {{ doneWatering() }}</h4>
 </div>
 

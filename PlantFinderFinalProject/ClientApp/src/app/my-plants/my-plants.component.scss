@@ -5,15 +5,17 @@ h3 {
   align-items: center;
   display: inline-block;
   margin: auto;
-
+  font-size: 22px;
 }
 
 button {
   border-style: none;
   background-color: white;
-
   display: inline-block;
+}
 
+img{
+    background-color: white;
 }
 
 
@@ -22,9 +24,10 @@ button {
   border: solid;
   border-width: 1px;
   border-radius: 10px;
-  width: 600px;
+  width: 500px;
   margin: auto;
   background-color: white;
+  margin-bottom: 30px;
 }
 
 .delete {
@@ -36,3 +39,5 @@ button {
  margin-top: 60px;
  margin-right: 20px;
 }
+
+

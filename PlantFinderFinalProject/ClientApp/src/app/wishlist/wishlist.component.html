@@ -10,11 +10,14 @@
       </h2>
     </div>
     <div [id]="'collapse'+i" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
-      <div class="card-body">          
-        Description: {{w.description}}<br />
-        <button (click)="delete(w.id)" class="delete">Remove from wishlist</button><br />
-        <button (click)="addToMyPlants(w.id)">Add To My Plants</button>
-      </div>
+      <div class="card-body">
+        Description: {{w.description}}</div><button (click)="delete(w.id)" class="delete">Remove From Wishlist</button>
+        <br />
+        <br />
+        <button (click)="addToMyPlants(w.id)" class="add">Add To My Plants</button>
+        <br />
+        <br />
+
     </div>
   </div>
 </div>

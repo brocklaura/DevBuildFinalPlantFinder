@@ -3,11 +3,13 @@ h3 {
   font-family: 'Nanum Gothic', sans-serif;
 }
 
-.delete, add{
+.delete, .add{
   float: right;
   background-color: #617B5C;
   border-style: none;
-  width: 15%;
+  width: 16%;
+
+
 }
 
 .card-body {
@@ -18,7 +20,3 @@ h3 {
 
 }
 
-.background {
-  background-size: auto;
-  background-repeat: no-repeat;
-}

@@ -122,6 +122,20 @@ namespace PlantFinderFinalProject.Models
             return conn.Execute(deleteString, new { id = id });
         }
 
+        public int UpdateMyPlants(JoinedPlant plant)
+        {
+            string command = "UPDATE My_Plants ";
+            command += "SET Water_Completed='1' ";
+            command += "WHERE PlantID=@ID AND UserID=@UserID";
+
+            int result = conn.Execute(command, plant);
+            
+
+
+
+            return result;
+        }
+
 
     }
 }

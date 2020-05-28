@@ -53,14 +53,14 @@ export class MyPlantsComponent {
   }
 
   //added for patch
-  //patch() {
-  //  this.plantsData.patch(opost).subscribe
-  //  (
-  //    data =>
-  //    {
-  //      this.objPatch = data;
-  //    }
-  //  )
-
-//}
+  update(item: JoinedPlant) {
+    console.log("The plant ID being passed in is " + item.plantID);
+    this.plantsData.patchWaterCompleted(item).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.get();
+      },
+      error => console.error(error)
+    );
+  }
 }

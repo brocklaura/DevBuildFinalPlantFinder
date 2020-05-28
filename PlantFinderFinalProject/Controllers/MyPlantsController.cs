@@ -59,5 +59,24 @@ namespace PlantFinderFinalProject.Controllers
             int result = dal.DeleteFromMyPlants(id);
             return result;
         }
+
+        [HttpPut]
+        public Object Put(JoinedPlant item)
+        {
+            //if (item.WaterCompleted == true)
+            //{
+            //    return Delete(item.ID);
+            //}
+
+            int result = dal.UpdateMyPlants(item);
+
+            //TODO: Return success or error code
+            return new
+            {
+                result = result,
+                success = result == 1 ? true : false
+            };
+        }
     }
 }
+

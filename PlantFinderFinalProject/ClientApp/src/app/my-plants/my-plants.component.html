@@ -1,31 +1,7 @@
-<!--<div *ngFor="let p of myPlants">
-  <p>{{p.title}}</p>
-</div>-->
-<!--<div>
-  <h1 style="text-align: center; padding: 1px; color: mediumturquoise; font-family: 'Century Gothic'; font-size:3em ;margin-top: 30px"><strong>My Plants!</strong></h1>
-  <div style="margin-bottom:100px;" class="myaccordion" id="accordionExample">
-    <div class="card" *ngFor="let p of myPlants; let i = index">
-      <div class="card-header" [id]="'heading'+i">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i">
-            <h3>{{p.title}}</h3>
-          </button>
-        </h2>
-      </div>
-      <div [id]="'collapse'+i" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
-        <div class="card-body">
-          <h4>Description: {{p.description}}</h4>
-          <button (click)="delete(p.id)">Delete From List</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->
-
 <h1 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">Water Tracker</h1>
 <div class="containter">
   <div *ngFor="let p of myPlants; let i = index">
-    <button (click)="delete(p.id)"><img src="https://vignette.wikia.nocookie.net/play-rust/images/7/7f/Water_icon.png/revision/latest/top-crop/width/360/height/360?cb=20151106061403" width="40px"></button>
+    <button (click)="update(p)"><img src="https://vignette.wikia.nocookie.net/play-rust/images/7/7f/Water_icon.png/revision/latest/top-crop/width/360/height/360?cb=20151106061403" width="40px"></button>
     <h3 style="text-align: center; padding: 1px; color: #617B5C; margin-top: 50px">{{p.title}} </h3> 
     <button class="delete" (click)="delete(p.id)">Delete Plant</button><br />
 

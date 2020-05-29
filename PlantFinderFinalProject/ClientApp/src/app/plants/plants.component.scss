@@ -1,6 +1,7 @@
 h3 {
   color: #617B5C;
   font-family:'Nanum Gothic', sans-serif;
+
 }
 
 
@@ -8,7 +9,8 @@ h1 {
   animation-name: changecolor;
   animation-duration: 3s;
   animation-iteration-count: infinite;
-  font-size: 70px;
+  font-size: 60px;
+
 }
 
 @keyframes changecolor {
@@ -33,7 +35,58 @@ h1 {
 
 
 img {
-  width: 1110px;
-  height: 650px;
-  align-content: center;
+  width: 870px;
+  height: 560px;
+  margin-bottom: -30px;
+  /*align-content: center;*/
+}
+
+#slideshow {
+  overflow: hidden;
+  width: 720px;
+  height: 560px;
+  margin: 0 auto;
+}
+
+.slide-wrapper {
+  width: 2912px;
+  -webkit-animation: slide 18s ease infinite;
+}
+
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+
+
+
+@-webkit-keyframes slide {
+  20% {
+    margin-left: 0px;
+  }
+
+  30% {
+    margin-left: -728px;
+  }
+
+  50% {
+    margin-left: -728px;
+  }
+
+  60% {
+    margin-left: -1456px;
+  }
+
+  70% {
+    margin-left: -1456px;
+  }
+
+  80% {
+    margin-left: -2184px;
+  }
+
+  90% {
+    margin-left: -2184px;
+  }
 }
